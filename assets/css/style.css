@@ -1,0 +1,12 @@
+body{
+    overflow-y: hidden;
+}
+
+.jumbotron {
+    color: white;
+    background-image: url("../images/banner/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
