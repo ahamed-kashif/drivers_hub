@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="" />
+    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="typo">
+      <change afterPath="$PROJECT_DIR$/user_pages/car/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_pages/car/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/car/list.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616350617112</updated>
-      <workItem from="1616350618193" duration="6131000" />
+      <workItem from="1616350618193" duration="11967000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1616356449168</created>
@@ -64,7 +70,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616356449168</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="readme added">
+      <created>1616356809419</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1616356809419</updated>
+    </task>
+    <task id="LOCAL-00003" summary="typo">
+      <created>1616357544358</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616357544358</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,6 +92,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gitignore added" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore added" />
+    <MESSAGE value="readme added" />
+    <MESSAGE value="typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="typo" />
   </component>
 </project>
