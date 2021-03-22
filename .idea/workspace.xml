@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin_pages/auth/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin_pages/car/add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin_pages/car/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1616350617112</updated>
       <workItem from="1616350618193" duration="14933000" />
-      <workItem from="1616395560179" duration="9183000" />
+      <workItem from="1616395560179" duration="9851000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1616356449168</created>
@@ -114,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616403181796</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add car page is added">
+      <created>1616405342607</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616405342607</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +128,7 @@
     <MESSAGE value="car show unresolved" />
     <MESSAGE value="auth resolved" />
     <MESSAGE value="nav fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="nav fixed" />
+    <MESSAGE value="add car page is added" />
+    <option name="LAST_COMMIT_MESSAGE" value="add car page is added" />
   </component>
 </project>
