@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Available Cars</title>
+    <title>SUV-yz V8 | Driver's Hub</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body class="body-2">
+<body class="body-2" style="background-color: #f5eeab">
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand mr-5 ml-2 font-monospace " href="#">Driver's Hub</a>
+        <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.html">Driver's Hub</a>
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -27,24 +27,25 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item mr-2">
                     <a class="nav-link" href="/index.html">Home
-                        <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item mr-2">
-                    <a class="nav-link active" href="javascript:void(0)">Cars</a>
+                    <a class="nav-link active" href="/user_pages/car/list.html">Cars</a>
+                    <span class="sr-only">(current)</span>
                 </li>
                 <li class="nav-item mr-2">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="/user_pages/about-us.html">About us!</a>
                 </li>
-
+                <li class="nav-item mr-2">
+                    <a class="nav-link" href="/user_pages/auth/login.html">Login</a>
+                </li>
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                       aria-haspopup="true" aria-expanded="false">User</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
                     </div>
                 </li>
 
@@ -62,151 +63,28 @@
 
     </nav>
     <!--/.Navbar-->
-    <!-- Classic tabs -->
-    <div class="classic-tabs border rounded px-4 pt-1">
-
-        <ul class="nav tabs-primary nav-justified" id="advancedTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active show" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Information</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews (1)</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="advancedTabContent">
-            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                <h5>Product Description</h5>
-                <p class="small text-muted text-uppercase mb-2">Shirts</p>
-                <ul class="rating">
-                    <li>
-                        <i class="fas fa-star fa-sm text-primary"></i>
-                    </li>
-                    <li>
-                        <i class="fas fa-star fa-sm text-primary"></i>
-                    </li>
-                    <li>
-                        <i class="fas fa-star fa-sm text-primary"></i>
-                    </li>
-                    <li>
-                        <i class="fas fa-star fa-sm text-primary"></i>
-                    </li>
-                    <li>
-                        <i class="far fa-star fa-sm text-primary"></i>
-                    </li>
-                </ul>
-                <h6>12.99 $</h6>
-                <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-                    error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-                    officia quis dolore quos sapiente tempore alias.</p>
-            </div>
-            <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
-                <h5>Additional Information</h5>
-                <table class="table table-striped table-bordered mt-3">
-                    <thead>
-                    <tr>
-                        <th scope="row" class="w-150 dark-grey-text h6">Weight</th>
-                        <td><em>0.3 kg</em></td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row" class="w-150 dark-grey-text h6">Dimensions</th>
-                        <td><em>50 × 60 cm</em></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                <h5><span>1</span> review for <span>Fantasy T-shirt</span></h5>
-                <div class="media mt-3 mb-4">
-                    <img class="d-flex mr-3 z-depth-1" src="https://mdbootstrap.com/img/Photos/Others/placeholder1.jpg" width="62" alt="Generic placeholder image">
-                    <div class="media-body">
-                        <div class="d-sm-flex justify-content-between">
-                            <p class="mt-1 mb-2">
-                                <strong>Marthasteward </strong>
-                                <span>– </span><span>January 28, 2020</span>
-                            </p>
-                            <ul class="rating mb-sm-0">
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                            </ul>
+    <div class="container">
+        <div class="card mb-3 mt-5" >
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-7">
+                        <img src="/assets/images/banner/banner.jpg" alt="..." class="img-fluid">
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card-body">
+                            <h5 class="card-title">Porche SUV yz V8</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <form>
+                                <button class="btn btn-lg btn-outline-warning">APPLY NOW!</button>
+                            </form>
                         </div>
-                        <p class="mb-0">Nice one, love it!</p>
-                    </div>
-                </div>
-                <hr>
-                <h5 class="mt-4">Add a review</h5>
-                <p>Your email address will not be published.</p>
-                <div class="my-3">
-                    <ul class="rating mb-0">
-                        <li>
-                            <a href="#!">
-                                <i class="fas fa-star fa-sm text-primary"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fas fa-star fa-sm text-primary"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fas fa-star fa-sm text-primary"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fas fa-star fa-sm text-primary"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="far fa-star fa-sm text-primary"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <!-- Your review -->
-                    <div class="md-form md-outline">
-                        <textarea id="form76" class="md-textarea form-control pr-6" rows="4"></textarea>
-                        <label for="form76">Your review</label>
-                    </div>
-                    <!-- Name -->
-                    <div class="md-form md-outline">
-                        <input type="text" id="form75" class="form-control pr-6">
-                        <label for="form75">Name</label>
-                    </div>
-                    <!-- Email -->
-                    <div class="md-form md-outline">
-                        <input type="email" id="form77" class="form-control pr-6">
-                        <label for="form77">Email</label>
-                    </div>
-                    <div class="text-right pb-2">
-                        <button type="button" class="btn btn-primary">Add a review</button>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- Classic tabs -->
+
 
     <script src="/assets/js/plugins/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
