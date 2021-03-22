@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="" />
+    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_pages/car/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_pages/car/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_pages/car/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/car/list.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../erp_sys" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -64,7 +69,8 @@
       <option name="presentableId" value="Default" />
       <updated>1616350617112</updated>
       <workItem from="1616350618193" duration="14933000" />
-      <workItem from="1616395560179" duration="9851000" />
+      <workItem from="1616395560179" duration="11922000" />
+      <workItem from="1616414560411" duration="703000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1616356449168</created>
@@ -115,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616405342607</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="typo">
+      <created>1616405957573</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616405957573</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,11 +137,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gitignore added" />
     <MESSAGE value="readme added" />
-    <MESSAGE value="typo" />
     <MESSAGE value="car show unresolved" />
     <MESSAGE value="auth resolved" />
     <MESSAGE value="nav fixed" />
     <MESSAGE value="add car page is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="add car page is added" />
+    <MESSAGE value="typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="typo" />
   </component>
 </project>
