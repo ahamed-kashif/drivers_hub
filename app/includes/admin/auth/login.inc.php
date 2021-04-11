@@ -23,5 +23,5 @@ if (count($_POST) > 0) {
 if (isset($_SESSION["admin_name"])) {
     header("Location:../../../../admin_pages/dashboard.php?success=" . $message);
 } else {
-    header("Location:../../../../admin_pages/login.php?error=" . $message);
+    header("Location:../../../../admin_pages/auth/login.php?error=" . $message);
 }

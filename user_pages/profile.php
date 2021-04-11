@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['name'])){
+    header("Location:../user_pages/auth/login.php?error=Login%20First");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +18,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.html">Driver's Hub</a>
+    <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.php">Driver's Hub</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -26,30 +32,19 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-2">
-                <a class="nav-link" href="/index.html">Home
+                <a class="nav-link" href="/index.php">Home
 
                 </a>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="/user_pages/car/list.html">Cars</a>
+                <a class="nav-link" href="/user_pages/car/list.php">Cars</a>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="about-us.html">About us!</a>
+                <a class="nav-link" href="about-us.php">About us!</a>
             </li>
-            <li class="nav-item mr-2">
-                <a class="nav-link" href="/user_pages/auth/login.php">Login</a>
-            </li>
-
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link active dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">User</a>
-                <span class="sr-only">(current)</span>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="profile.php">Profile</a>
-                    <a class="dropdown-item" href="#">Logout</a>
-                </div>
-            </li>
+            <?php
+            include "./component/auth.php"
+            ?>
 
         </ul>
         <!-- Links -->

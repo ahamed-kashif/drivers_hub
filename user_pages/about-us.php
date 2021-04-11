@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.html">Driver's Hub</a>
+    <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.php">Driver's Hub</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -26,30 +29,20 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-2">
-                <a class="nav-link" href="/index.html">Home
+                <a class="nav-link" href="/index.php">Home
 
                 </a>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="/user_pages/car/list.html">Cars</a>
+                <a class="nav-link" href="/user_pages/car/list.php">Cars</a>
             </li>
             <li class="nav-item mr-2">
                 <a class="nav-link active" href="javascript:void(0)">About us!</a>
                 <span class="sr-only">(current)</span>
             </li>
-            <li class="nav-item mr-2">
-                <a class="nav-link" href="/user_pages/auth/login.php">Login</a>
-            </li>
-
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">User</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="profile.php">Profile</a>
-                    <a class="dropdown-item" href="#">Logout</a>
-                </div>
-            </li>
+            <?php
+                include "./component/auth.php"
+            ?>
 
         </ul>
         <!-- Links -->

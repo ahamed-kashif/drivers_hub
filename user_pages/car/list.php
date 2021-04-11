@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.html">Driver's Hub</a>
+        <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.php">Driver's Hub</a>
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -26,7 +29,7 @@
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item mr-2">
-                    <a class="nav-link" href="/index.html">Home
+                    <a class="nav-link" href="/index.php">Home
                     </a>
                 </li>
                 <li class="nav-item mr-2">
@@ -34,20 +37,11 @@
                     <span class="sr-only">(current)</span>
                 </li>
                 <li class="nav-item mr-2">
-                    <a class="nav-link" href="/user_pages/about-us.html">About us!</a>
+                    <a class="nav-link" href="/user_pages/about-us.php">About us!</a>
                 </li>
-                <li class="nav-item mr-2">
-                    <a class="nav-link" href="/user_pages/auth/login.php">Login</a>
-                </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">User</a>
-                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../profile.php">Profile</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </div>
-                </li>
+                <?php
+                include "../component/auth.php"
+                ?>
 
             </ul>
             <!-- Links -->
@@ -73,7 +67,7 @@
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="show.html" class="btn btn-sm btn-outline-warning">View</a>
+                                    <a href="show.php" class="btn btn-sm btn-outline-warning">View</a>
                                 </div>
                                 <small class="text-muted">9 mins</small>
                             </div>

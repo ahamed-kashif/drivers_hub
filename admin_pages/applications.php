@@ -18,7 +18,7 @@ if(!isset($_SESSION['admin_name'])){
 <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.html">Driver's Hub</a>
+    <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.php">Driver's Hub</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -37,13 +37,13 @@ if(!isset($_SESSION['admin_name'])){
                 <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="car/list.html">Cars</a>
+                <a class="nav-link" href="car/list.php">Cars</a>
             </li>
             <li class="nav-item mr-2">
                 <a class="nav-link" href="drivers.php">Drivers</a>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="/admin_pages/car/add.html">Add Car</a>
+                <a class="nav-link" href="/admin_pages/car/add.php">Add Car</a>
             </li>
             <!-- Dropdown -->
             <?php

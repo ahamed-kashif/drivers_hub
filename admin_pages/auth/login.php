@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['admin_name'])){
+    header('Location: ../profile.php?error=your%20already%20logged%20in!');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.html">Driver's Hub</a>
+        <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.php">Driver's Hub</a>
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -31,23 +34,14 @@
                     </a>
                 </li>
                 <li class="nav-item mr-2">
-                    <a class="nav-link" href="user_pages/car/list.html">Cars</a>
+                    <a class="nav-link" href="user_pages/car/list.php">Cars</a>
                 </li>
                 <li class="nav-item mr-2">
-                    <a class="nav-link" href="/user_pages/about-us.html">About us!</a>
+                    <a class="nav-link" href="/user_pages/about-us.php">About us!</a>
                 </li>
-                <li class="nav-item mr-2">
-                    <a class="nav-link" href="/user_pages/auth/login.php">Login</a>
-                </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">User</a>
-                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="user_pages/profile.php">Profile</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </div>
-                </li>
+                <?php
+                include "./user_pages/component/auth.php"
+                ?>
 
             </ul>
             <!-- Links -->

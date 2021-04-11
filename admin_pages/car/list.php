@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['admin_name'])){
+    header("Location:../../admin_pages/auth/login.php?error=Login%20First");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +18,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.html">Driver's Hub</a>
+    <a class="navbar-brand mr-5 ml-2 font-monospace " href="/index.php">Driver's Hub</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -37,16 +43,12 @@
                 <a class="nav-link" href="javascript:void(0)" onclick="alert('Page is not ready yet!')">Drivers</a>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="/admin_pages/car/add.html">Add Car</a>
+                <a class="nav-link" href="/admin_pages/car/add.php">Add Car</a>
             </li>
             <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Admin</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Logout</a>
-                </div>
-            </li>
+            <?php
+            include "../component/auth.php"
+            ?>
 
         </ul>
         <!-- Links -->

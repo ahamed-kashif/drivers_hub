@@ -4,7 +4,7 @@ include "../../../config/Connection.php";
 session_start();
 $message="";
 if(count($_POST)>0) {
-    $result = mysqli_query($conn,"SELECT * FROM users WHERE email='" . $_POST["username"] . "' and password = '". $_POST["password"]."' LIMIT 1");
+    $result = mysqli_query($conn,"SELECT * FROM users WHERE username='" . $_POST["username"] . "' and password = '". $_POST["password"]."' LIMIT 1");
     if(!$result){
         printf("Error: %s\n", mysqli_error($conn));
     }else{
@@ -20,7 +20,7 @@ if(count($_POST)>0) {
     }
 }
 if(isset($_SESSION["id"])) {
-    header("Location:index.php?message=".$message);
+    header("Location: ../../../../user_pages/profile.php?success=".$message);
 }else{
-    header("Location:../../../user_pages/auth/login.php?message=".$message);
+    header("Location:../../../../user_pages/auth/login.php?error=".$message);
 }
