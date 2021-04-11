@@ -1,5 +1,5 @@
 <?php
-include "../Connection.php";
+include "../../../config/Connection.php";
 
 session_start();
 $message="";

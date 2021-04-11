@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['admin_name'])){
+    header("Location:../admin_pages/auth/login.php?error=Login%20First");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,18 +32,21 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-2">
-                <a class="nav-link active" href="dashboard.html">Admin Dashboard
+                <a class="nav-link" href="dashboard.php">Admin Dashboard
                 </a>
-                <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="car/list.html">Cars</a>
+                <a class="nav-link" href="javascript:void(0)">Cars</a>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="drivers.html">Drivers</a>
+                <a class="nav-link" href="drivers.php">Drivers</a>
             </li>
             <li class="nav-item mr-2">
                 <a class="nav-link" href="/admin_pages/car/add.html">Add Car</a>
+            </li>
+            <li class="nav-item mr-2">
+                <a class="nav-link active" href="drivers.php">Drivers</a>
+                <span class="sr-only">(current)</span>
             </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -68,7 +77,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="row bordered">
                     <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
+                        <a href="../user_pages/profile.php"><h4>Driver One</h4></a>
                         <small class="text-muted">3 mins ago</small>
                     </div>
                     <div class="col-md-3 text-align-right">
@@ -86,7 +95,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="row bordered">
                     <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
+                        <a href="javascript:void(0)"><h4>Driver One</h4></a>
                         <small class="text-muted">3 mins ago</small>
                     </div>
                     <div class="col-md-3 text-align-right">
@@ -104,7 +113,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="row bordered">
                     <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
+                        <a href="javascript:void(0)"><h4>Driver One</h4></a>
                         <small class="text-muted">3 mins ago</small>
                     </div>
                     <div class="col-md-3 text-align-right">
@@ -122,7 +131,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="row bordered">
                     <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
+                        <a href="javascript:void(0)"><h4>Driver One</h4></a>
                         <small class="text-muted">3 mins ago</small>
                     </div>
                     <div class="col-md-3 text-align-right">
@@ -140,7 +149,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="row bordered">
                     <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
+                        <a href="javascript:void(0)"><h4>Driver One</h4></a>
                         <small class="text-muted">3 mins ago</small>
                     </div>
                     <div class="col-md-3 text-align-right">
@@ -158,7 +167,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="row bordered">
                     <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
+                        <a href="javascript:void(0)"><h4>Driver One</h4></a>
                         <small class="text-muted">3 mins ago</small>
                     </div>
                     <div class="col-md-3 text-align-right">

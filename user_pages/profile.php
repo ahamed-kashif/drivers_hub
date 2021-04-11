@@ -46,7 +46,7 @@
                    aria-haspopup="true" aria-expanded="false">User</a>
                 <span class="sr-only">(current)</span>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="profile.html">Profile</a>
+                    <a class="dropdown-item" href="profile.php">Profile</a>
                     <a class="dropdown-item" href="#">Logout</a>
                 </div>
             </li>
@@ -64,6 +64,9 @@
     <!-- Collapsible content -->
 
 </nav>
+<?php
+    include "../app/includes/component/message.php"
+?>
 <!--/.Navbar-->
 <div class="container mt-5 d-flex justify-content-center">
     <div class="card p-3">

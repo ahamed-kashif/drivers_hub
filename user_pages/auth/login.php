@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <form id="login-form" action="../../app/includes/auth/login.inc.php" method="post">
+                <form id="login-form" action="../../app/includes/user/auth/login.inc.php" method="post">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -47,15 +47,9 @@
                         <input type="submit" value="Login" class="btn float-right login_btn">
                     </div>
                 </form>
-                <div>
-                    <?php
-                        if(count($_GET) > 0){
-                            if(isset($_GET['message'])){
-                                echo '<span class="text-danger">'.$_GET['message'].'</span>';
-                            }
-                        }
-                    ?>
-                </div>
+                <?php
+                    include "../../app/includes/component/message.php"
+                ?>
             </div>
             <div class="card-footer">
                 <div class="d-flex justify-content-center links">

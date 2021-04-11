@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['admin_name'])){
+    header("Location:../admin_pages/auth/login.php?error=Login%20First");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +32,7 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-2">
-                <a class="nav-link active" href="dashboard.html">Admin Dashboard
+                <a class="nav-link active" href="dashboard.php">Admin Dashboard
                 </a>
                 <span class="sr-only">(current)</span>
             </li>
@@ -34,19 +40,11 @@
                 <a class="nav-link" href="car/list.html">Cars</a>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="drivers.html">Drivers</a>
+                <a class="nav-link" href="drivers.php">Drivers</a>
             </li>
-            <li class="nav-item mr-2">
-                <a class="nav-link" href="/admin_pages/car/add.html">Add Car</a>
-            </li>
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Admin</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Logout</a>
-                </div>
-            </li>
+            <?php
+            include "./component/auth.php"
+            ?>
 
         </ul>
         <!-- Links -->
@@ -63,14 +61,19 @@
 </nav>
 <!--/.Navbar-->
 <div class="container">
+    <div>
+        <?php
+            include "../app/includes/component/message.php"
+        ?>
+    </div>
     <div class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12 col-lg-12">
-                    <a href="applications.html"><h3>Applications</h3></a>
+                    <a href="applications.php"><h3>Applications</h3></a>
                 </div>
                 <div class="col-md-12 col-lg-12">
-                    <a href="drivers.html"><h3>Drivers</h3></a>
+                    <a href="drivers.php"><h3>Drivers</h3></a>
                 </div>
             </div>
         </div>
