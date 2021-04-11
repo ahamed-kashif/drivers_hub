@@ -1,0 +1,15 @@
+$(document).ready(function() {
+    var $image = $("#captcha-image");
+    var initialPageLoad = true;
+    $image.load(function() {
+        initialPageLoad = false;
+    }).error(function() {
+        if(!initialPageLoad) {
+            window.location = window.contextPath + "/?session-expired=true";
+        }
+    });
+    $image.attr("src", window.contextPath + "/captcha/?t=" + Date.now());
+    $("#reload-captcha").on("click", function() {
+        $image.attr("src", window.contextPath + "/captcha/?t=" + Date.now());
+    });
+});

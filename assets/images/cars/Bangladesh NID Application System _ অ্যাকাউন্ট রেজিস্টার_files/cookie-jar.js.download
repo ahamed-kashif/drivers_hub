@@ -1,0 +1,28 @@
+(function($, global) {
+
+    function cookiesEnabled() {
+        var cookieEnabled = navigator.cookieEnabled;
+
+        if (cookieEnabled === false) {
+            return false;
+        }
+
+        if (!document.cookie && (cookieEnabled === null || false)) {
+            document.cookie = "testcookie=1";
+            if (!document.cookie) {
+                return false;
+            } else {
+                document.cookie = "testcookie=; expires=" + new Date(0).toUTCString();
+            }
+        }
+
+        return true;
+    }
+
+    $(document).ready(function() {
+        if(!cookiesEnabled()) {
+            document.body.innerHTML = "<h1 style='text-align: center'>"+ global.cookiesDisabledMessage +"</h1>";
+        }
+    });
+
+})(jQuery, window);

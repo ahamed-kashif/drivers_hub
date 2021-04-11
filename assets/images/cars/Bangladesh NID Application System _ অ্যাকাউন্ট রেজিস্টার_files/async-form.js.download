@@ -1,0 +1,128 @@
+(function (global, $) {
+    var form;
+    var errorBlock;
+    var defaultSettings = {};
+    var SpecialField = {DATE: "date", ALL: "all"};
+    var StatusCode = { SUCCESS: "SUCCESS", ERROR: "ERROR", PENDING: "PENDING"};
+    var AjaxStatusHandlers = {
+        handleErrorStatus: function(jqXHR) {
+            form.find("input[name=captcha]").val("");
+            $("#captcha-image").attr("src", global.contextPath + "/captcha/");
+            if(jqXHR.error.dataTab) {
+                var $tab = $("a[data-tab=" + jqXHR.error.dataTab + "]");
+                if($tab.length > 0 && !$tab.hasClass("active")) $tab.trigger("click");
+            }
+            if(jqXHR.error.field) {
+                if(jqXHR.error.field === SpecialField.DATE) {
+                    $("div.three.fields").addClass("error");
+                } else {
+                    $("*[name=" + jqXHR.error.field + "]").parent().addClass("error");
+                }
+            }
+            errorBlock.addClass("error").show().find("ul > li").text(jqXHR.error.message);
+        },
+        handlePendingStatus: function(jqXHR) {
+            var task = setInterval(function() {
+                $.get(global.contextPath + jqXHR.pending.url, function(response) {
+                    if(response.status === StatusCode.SUCCESS) {
+                        AjaxStatusHandlers.handleSuccessStatus(response);
+                        clearInterval(task);
+                    }
+                    if(response.status === StatusCode.ERROR) {
+                        AjaxStatusHandlers.handleErrorStatus(response);
+                        clearInterval(task);
+                    }
+                });
+            }, jqXHR.pending.interval);
+        },
+        handleSuccessStatus: function(jqXHR) {
+            if(jqXHR.success.redirect) {
+                global.location = global.contextPath + jqXHR.success.redirect;
+                return;
+            }
+            if(jqXHR.success.template) {
+                var templateParams = {};
+                templateParams.templateName = global.contextPath + jqXHR.success.template;
+                if(typeof defaultSettings.templateParams !== 'undefined') {
+                    if(typeof defaultSettings.templateParams.templateName !== 'undefined') {
+                        templateParams.templateName = defaultSettings.templateParams.templateName;
+                    }
+                    if(typeof defaultSettings.templateParams.partialViewContainer !== 'undefined') {
+                        templateParams.partialViewContainer = defaultSettings.templateParams.partialViewContainer;
+                    }
+                    if(typeof defaultSettings.templateParams.elementsToReplace !== 'undefined') {
+                        templateParams.elementsToReplace = defaultSettings.templateParams.elementsToReplace;
+                    }
+                    if(typeof defaultSettings.templateParams.after !== 'undefined') {
+                        templateParams.after = defaultSettings.templateParams.after;
+                    }
+                }
+                templateLoader.load(templateParams);
+                return;
+            }
+            console.log("stay !!");
+        }
+    };
+    var defaultDone = function(jqXHR) {
+        if(jqXHR.status === StatusCode.ERROR) {
+            AjaxStatusHandlers.handleErrorStatus(jqXHR);
+            return;
+        }
+        if(jqXHR.status === StatusCode.PENDING) {
+            AjaxStatusHandlers.handlePendingStatus(jqXHR);
+            return;
+        }
+        if(jqXHR.status === StatusCode.SUCCESS) {
+            AjaxStatusHandlers.handleSuccessStatus(jqXHR);
+        }
+    };
+    var defaultFail = function(jqXHR) {};
+
+    // public interface
+    global.asyncForm = {
+        handleWithCare: function(settings) {
+            form = $("#form");
+            if(typeof settings !== 'undefined') {
+                defaultSettings = settings;
+            } else {
+                defaultSettings = {};
+            }
+            if(typeof defaultSettings.formFragment !== 'undefined') {
+                var $formFragment = form.find("#form-fragment");
+                if($formFragment.length <= 0) {
+                    $formFragment = $("<input type='hidden' id='form-fragment' name='formFragment'>");
+                    form.append($formFragment);
+                }
+                $formFragment.val(defaultSettings.formFragment);
+            }
+            form.find("div").each(function(index, item) {
+                $(item).removeClass("error");
+            });
+            errorBlock = $("#error-block");
+            errorBlock.hide();
+            var __data = typeof defaultSettings.data === 'undefined' ? form.serialize() : defaultSettings.data;
+            var __url = typeof defaultSettings.url === 'undefined' ? form.attr("action") : defaultSettings.url;
+            var __done = typeof defaultSettings.doneCallback === 'undefined' ? defaultDone : defaultSettings.doneCallback;
+            var __fail = typeof defaultSettings.failCallback === 'undefined' ? defaultFail : defaultSettings.failCallback;
+            var defer;
+            if(typeof defaultSettings.upload !== 'undefined') {
+                defer = $.ajax({
+                    type: 'POST',
+                    url: __url,
+                    data: __data,
+                    dataType: 'text',
+                    processData: false,
+                    contentType: false
+                });
+            } else {
+                defer = $.ajax({
+                    type: 'POST',
+                    url: __url,
+                    data: __data
+                });
+            }
+            defer.done(__done);
+            defer.fail(__fail);
+        }
+    };
+})(window, jQuery);

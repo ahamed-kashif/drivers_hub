@@ -1,0 +1,30 @@
+(function (global, $) {
+    global.templateLoader = {
+        load : function(settings) {
+            var $container;
+            if(typeof settings.partialViewContainer === 'undefined') {
+                $container = $("#partial-view-container");
+            } else {
+                $container = settings.partialViewContainer;
+            }
+            var defer = $.get(settings.templateName + "?t=" + Date.now());
+            // google analytics specific code
+            if(typeof gtag !== 'undefined' && settings.templateName) {
+                gtag('set', { page: settings.templateName, title: document.title + " [partial view]" });
+                gtag('send', 'pageview');
+            }
+            // google analytics specific code ends
+            defer.done(function(templateContent) {
+                if(typeof settings.elementsToReplace !== 'undefined') {
+                    for(var i = 0; i < settings.elementsToReplace.length; i++) {
+                        $container.find(settings.elementsToReplace[i]).remove();
+                    }
+                } else {
+                    $container.empty();
+                }
+                $container.append(templateContent);
+                if(typeof settings.after === 'function') settings.after();
+            });
+        }
+    };
+})(window, jQuery);

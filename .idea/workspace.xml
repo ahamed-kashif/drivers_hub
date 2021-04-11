@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin_pages/applications.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin_pages/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin_pages/drivers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_pages/applications.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_pages/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/includes/Connection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/includes/auth/login.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_pages/car/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_pages/car/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_pages/about-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/about-us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_pages/applications.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/applications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_pages/auth/forgot-pass.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/auth/forgot-pass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_pages/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/auth/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_pages/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/auth/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_pages/car/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/car/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_pages/car/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/car/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_pages/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_pages/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rms" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -64,6 +64,7 @@
       <recent name="C:\xampp\htdocs\drivers_hub\assets\vendor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\drivers_hub\app\Includes" />
       <recent name="C:\xampp\htdocs\drivers_hub\assets\images" />
       <recent name="C:\xampp\htdocs\drivers_hub" />
       <recent name="C:\xampp\htdocs\drivers_hub\assets\vendor\bootstrap" />
@@ -81,7 +82,12 @@
       <workItem from="1616395560179" duration="11922000" />
       <workItem from="1616414560411" duration="2422000" />
       <workItem from="1616607001425" duration="1215000" />
-      <workItem from="1616992466450" duration="4953000" />
+      <workItem from="1616992466450" duration="6178000" />
+      <workItem from="1617322139397" duration="827000" />
+      <workItem from="1617345632142" duration="2822000" />
+      <workItem from="1617562825070" duration="659000" />
+      <workItem from="1617822147666" duration="685000" />
+      <workItem from="1618162077535" duration="5686000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1616356449168</created>
@@ -146,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616415457528</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="new files added">
+      <created>1616997585816</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616997585816</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +174,7 @@
     <MESSAGE value="add car page is added" />
     <MESSAGE value="typo" />
     <MESSAGE value="changed body color" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed body color" />
+    <MESSAGE value="new files added" />
+    <option name="LAST_COMMIT_MESSAGE" value="new files added" />
   </component>
 </project>
