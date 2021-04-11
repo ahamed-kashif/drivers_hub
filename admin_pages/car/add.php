@@ -66,25 +66,28 @@ if(!isset($_SESSION['admin_name'])){
 <!--/.Navbar-->
 <div class="container m-5 p-5">
     <h2 class="text-warning">Add new car</h2>
-    <form>
+    <form action="../../app/includes/admin/car/store.inc.php" method="post">
         <div class="form-group">
             <label for="car-brand">Car Brand</label>
-            <input type="text" class="form-control" id="car-brand"  placeholder="">
+            <input type="text" class="form-control" id="car-brand" name="brand"  placeholder="">
         </div>
         <div class="form-group">
             <label for="car-model">Car Model</label>
-            <input type="text" class="form-control" id="car-model"  placeholder="">
+            <input type="text" class="form-control" id="car-model" name="model" placeholder="">
         </div>
         <div class="form-group">
             <label for="owner-name">Owner Name</label>
-            <input type="text" class="form-control" id="owner-name" placeholder="">
+            <input type="text" class="form-control" id="owner-name" name="owner_name" placeholder="">
         </div>
         <div class="form-group">
             <label for="job-description">Job Description</label>
-            <textarea class="form-control" id="job-description" required></textarea>
+            <textarea class="form-control" id="job-description" name="job_des" ></textarea>
         </div>
         <button type="submit" class="btn btn-warning">Submit</button>
     </form>
+    <?php
+    include "../../app/includes/component/message.php"
+    ?>
 </div>
 <script src="/assets/js/plugins/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
