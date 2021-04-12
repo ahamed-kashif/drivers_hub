@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="" />
+    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_pages/car/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_pages/car/add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/includes/admin/car/store.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/includes/admin/car/store.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/ajax-setup.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/analytics.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/app-store-badge-m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/async-form.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/captcha-handler.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/claim-account.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/cookie-jar.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/css(1)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/enter-key-handler.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/google-play-badge-m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/jquery.loadmask.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/jquery.loadmask.min.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/jquery.min.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/jquery.noty.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/jquery.noty.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/jquery.numeric.init.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/jquery.numeric.min.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/lookup-loader.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/noty_theme_default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/polyfill.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/qr-code" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/semantic.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/semantic.min.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars/Bangladesh NID Application System _ অ্যাকাউন্ট রেজিস্টার_files/template-loader.js.download" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +76,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../rms" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">

@@ -66,7 +66,7 @@ if(!isset($_SESSION['admin_name'])){
 <!--/.Navbar-->
 <div class="container m-5 p-5">
     <h2 class="text-warning">Add new car</h2>
-    <form action="../../app/includes/admin/car/store.inc.php" method="post">
+    <form action="../../app/includes/admin/car/store.inc.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="car-brand">Car Brand</label>
             <input type="text" class="form-control" id="car-brand" name="brand"  placeholder="">
@@ -82,6 +82,10 @@ if(!isset($_SESSION['admin_name'])){
         <div class="form-group">
             <label for="job-description">Job Description</label>
             <textarea class="form-control" id="job-description" name="job_des" ></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input class="form-control" id="image" name="image" type="file"/>
         </div>
         <button type="submit" class="btn btn-warning">Submit</button>
     </form>
