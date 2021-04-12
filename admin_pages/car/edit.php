@@ -1,5 +1,9 @@
 <?php
-include "../../app/includes/admin/car/list.inc.php";
+session_start();
+if(!isset($_SESSION['admin_name'])){
+    header("Location:../../admin_pages/auth/login.php?error=Login%20First");
+}
+include "../../app/includes/admin/car/edit.inc.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +33,7 @@ include "../../app/includes/admin/car/list.inc.php";
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-2">
-                <a class="nav-link" href="../dashboard.php">Admin Dashboard
+                <a class="nav-link" href="#" onclick="alert('This page is not ready yet!')">Admin Dashboard
                 </a>
             </li>
             <li class="nav-item mr-2">
@@ -61,33 +65,31 @@ include "../../app/includes/admin/car/list.inc.php";
 
 </nav>
 <!--/.Navbar-->
-<div class="album py-5">
-    <div class="container">
-        <?php
-        include "../../app/includes/component/message.php";
-        ?>
-        <div class="row">
-            <?php
-                foreach ($cars as $car){
-                    echo '<div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="/assets/images/uploads/'.$car['img'].'" alt="Card image cap" height="250" width="200">
-                    <div class="card-body">
-                        <p class="card-text">'.$car['job_des'].'</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a href="edit.php?id='.$car['id'].'" class="btn btn-sm btn-outline-warning">Edit</a>
-                                <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                        </div>
-                    </div>
-                </div>
-            </div>';
-                }
-            ?>
+<div class="container m-5 p-5">
+    <h2 class="text-warning">Add new car</h2>
+    <form action="../../app/includes/admin/car/update.inc.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="car-brand">Car Brand</label>
+            <input type="text" class="form-control" id="car-brand" name="brand"  placeholder="" value="<?php echo $car['brand'] ?>">
         </div>
-    </div>
+        <div class="form-group">
+            <label for="car-model">Car Model</label>
+            <input type="text" class="form-control" id="car-model" name="model" placeholder=""  value="<?php echo $car['model'] ?>">
+        </div>
+        <div class="form-group">
+            <label for="owner-name">Owner Name</label>
+            <input type="text" class="form-control" id="owner-name" name="owner_name" placeholder="" value="<?php echo $car['owner_name'] ?>">
+        </div>
+        <div class="form-group">
+            <label for="job-description">Job Description</label>
+            <textarea class="form-control" id="job-description" name="job_des" ><?php echo $car['job_des'] ?></textarea>
+        </div>
+        <input type="hidden" name="id" value="<?php echo $car['id']?>">
+        <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+    <?php
+    include "../../app/includes/component/message.php"
+    ?>
 </div>
 <script src="/assets/js/plugins/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
