@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/includes/admin/car/store.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_pages/car/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_pages/car/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_pages/car/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_pages/car/list.php" afterDir="false" />
-    </list>
+    <list default="true" id="eea75942-5b48-4b72-a97d-0116b5962621" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +75,7 @@
       <workItem from="1617345632142" duration="2822000" />
       <workItem from="1617562825070" duration="659000" />
       <workItem from="1617822147666" duration="685000" />
-      <workItem from="1618162077535" duration="16471000" />
+      <workItem from="1618162077535" duration="17158000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added">
       <created>1616356449168</created>
@@ -173,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618181389281</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="car store resolved">
+      <created>1618184070869</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1618184070869</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +194,7 @@
     <MESSAGE value="login resolved" />
     <MESSAGE value="admin login/logout &amp; auth middleware resolved" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="car store resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="car store resolved" />
   </component>
 </project>
