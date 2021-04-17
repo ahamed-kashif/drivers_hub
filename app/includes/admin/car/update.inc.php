@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     //inserting data
     include "../../../config/Connection.php";
-    $sql = "UPDATE cars SET brand='".$_POST['brand']."', model='".$_POST['model']."', owner_name='".$_POST['owner_name']."', job_des='".$_POST['job_des']."' WHERE id=".$_POST['id'];
+    $sql = "UPDATE cars SET brand='".$_POST['brand']."', model='".$_POST['model']."', owner_name='".$_POST['owner_name']."', job_des='".$_POST['job_des']."', updated_at='".date('y-m-d h:i:sa')."' WHERE id=".$_POST['id'];
     if (mysqli_query($conn, $sql)) {
         header('Location: ../../../../admin_pages/car/list.php?success=Car%20updated');
     } else {

@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
     //inserting data
     include "../../../config/Connection.php";
-    $sql = "INSERT INTO cars (brand, model, owner_name, job_des, img) VALUES ('".$_POST['brand']."', '".$_POST['model']."', '".$_POST['owner_name']."', '".$_POST['job_des']."', '".(empty($fileNewName) ? null : $fileNewName)."')";
+    $sql = "INSERT INTO cars (brand, model, owner_name, job_des, img, created_at, updated_at) VALUES ('".$_POST['brand']."', '".$_POST['model']."', '".$_POST['owner_name']."', '".$_POST['job_des']."', '".(empty($fileNewName) ? null : $fileNewName)."', '".date('y-m-d h:i:sa')."', '".date('y-m-d h:i:sa')."')";
     if (mysqli_query($conn, $sql)) {
         header("Location: ../../../../admin_pages/car/list.php?success=New%20car%20added");
     } else {

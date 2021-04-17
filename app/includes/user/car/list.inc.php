@@ -1,8 +1,5 @@
 <?php
 session_start();
-if(!isset($_SESSION['admin_name'])){
-    header("Location: ../../../../../admin_pages/dashboard.php");
-}
 
 define('DB_SERVER', '127.0.0.1');
 define('DB_USERNAME', 'root');
