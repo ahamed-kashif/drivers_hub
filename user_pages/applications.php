@@ -1,8 +1,5 @@
 <?php
 session_start();
-if(!isset($_SESSION['name'])){
-    header("Location:../user_pages/auth/login.php?error=Login%20First");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,108 +61,31 @@ if(!isset($_SESSION['name'])){
     <div class="row">
 
     </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-danger">cancel</button>
+    <?php
+        include '../app/includes/user/application/list.inc.php';
+        foreach ($applications as $app){
+            echo '<div class="card mt-5">
+                    <div class="card-body">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="row bordered">
+                                <div class="col-md-9 col-lg-9">
+                                    <a href="javascript:void(0)"><h4>'.$app['car']['brand'].'</h4></a>
+                                    <p>'.$app['car']['job_des'].'</p><br><br>
+                                    '.status($app['status']).'<br>
+                                    <small class="text-muted">'.$app['updated_at'].'</small>
+                                </div>
+                                <div class="col-md-3 text-align-right">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger">cancel</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="car/show.php"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-danger">cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-danger">cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-danger">cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-danger">cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-danger">cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                </div>';
+        }
+    ?>
+
 </div>
 
 <script src="/assets/js/plugins/jquery-3.2.1.slim.min.js"></script>

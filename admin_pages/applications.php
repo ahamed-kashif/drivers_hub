@@ -1,8 +1,5 @@
 <?php
 session_start();
-if(!isset($_SESSION['admin_name'])){
-    header("Location:../admin_pages/auth/login.php?error=Login%20First");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,116 +60,38 @@ if(!isset($_SESSION['admin_name'])){
     <!-- Collapsible content -->
 
 </nav>
+
 <!--/.Navbar-->
 <div class="container">
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success">Accept</button>
-                            <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+    <?php
+    include '../app/includes/admin/application/list.inc.php';
+    foreach ($applications as $app){
+        echo '<div class="card mt-5">
+                    <div class="card-body">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="row bordered">
+                                <div class="col-md-9 col-lg-9">
+                                    <a href="javascript:void(0)"><h4>'.$app['car']['brand'].'</h4></a>
+                                    <p>'.$app['car']['job_des'].'</p>
+                                </div>
+                                <div class="col-md-9 col-lg-9">
+                                    <span class="font-size-large">Driver: </h4><a href="javascript:void(0)"><h4>'.$app['user']['name'].'</h4></a></span>
+                                    <a href="mailto:'.$app['user']['email'].'">'.$app['user']['email'].'</a><br><br>
+                                    '.status($app['status']).'<br><br>
+                                    <small class="text-muted">'.$app['updated_at'].'</small>
+                                </div>
+                                <div class="col-md-3 text-align-right">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-success">Accept</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success">Accept</button>
-                            <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success">Accept</button>
-                            <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success">Accept</button>
-                            <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success">Accept</button>
-                            <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card mt-5">
-        <div class="card-body">
-            <div class="col-md-12 col-lg-12">
-                <div class="row bordered">
-                    <div class="col-md-9 col-lg-9">
-                        <a href="javascript:void(0)"><h4>Application One</h4></a>
-                        <small class="text-muted">3 mins ago</small>
-                    </div>
-                    <div class="col-md-3 text-align-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success">Accept</button>
-                            <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                </div>';
+    }
+    ?>
 </div>
 
 <script src="/assets/js/plugins/jquery-3.2.1.slim.min.js"></script>

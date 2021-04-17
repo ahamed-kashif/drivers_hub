@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['name'])){
+if (isset($_SESSION['name']) || isset($_SESSION['id'])){
     echo '<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">User</a>
