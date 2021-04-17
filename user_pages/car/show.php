@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,17 +56,24 @@ session_start();
     </nav>
     <!--/.Navbar-->
     <div class="container">
+        <?php
+            include "../../app/includes/user/car/show.inc.php";
+        ?>
         <div class="card mb-3 mt-5" >
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-7">
-                        <img src="/assets/images/banner/banner.jpg" alt="..." class="img-fluid">
+                        <?php
+                            echo '<img src="/assets/images/uploads/'.$car['img'].'" alt="..." class="img-fluid">';
+                        ?>
                     </div>
                     <div class="col-md-5">
                         <div class="card-body">
-                            <h5 class="card-title">Porche SUV yz V8</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <?php
+                             echo '<h5 class="card-title">'.$car['brand'].'-'.$car['model'].'</h5>
+                            <p class="card-text">'.$car['job_des'].'</p>
+                            <p class="card-text"><small class="text-muted">Last updated '.date_format(date_create($car['updated_at']),'d M, Y').'</small></p>'
+                            ?>
                             <form>
                                 <button class="btn btn-lg btn-outline-warning">APPLY NOW!</button>
                             </form>
