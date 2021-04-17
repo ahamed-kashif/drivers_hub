@@ -33,8 +33,10 @@ try{
 
 function status(int $code){
     switch ($code){
-        case 1: return '<div class="mb-2"><span class="bg-warning p-3 font-weight-bold text-light">Application Accepted</span></div>'; break;
+        case 1: return '<div class="mb-2"><span class="bg-success p-3 font-weight-bold text-light">Application Accepted</span></div>'; break;
         case 0: return '<div class="mb-2"><span class="bg-warning p-3 font-weight-bold text-light">Application Pending</span></div>'; break;
         case 3: return '<div class="mb-2"><span class="bg-danger p-3 font-weight-bold text-light">Application Denied</span></div>'; break;
+        case 4: return '<div class="mb-2"><span class="bg-danger p-3 font-weight-bold text-light">Application Cancelled</span></div>';
+            break;
     }
 }

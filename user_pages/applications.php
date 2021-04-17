@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Us! | Driver's Hub</title>
+    <title>Applications | Driver's Hub</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/x-icon">
@@ -64,7 +64,8 @@ session_start();
     <?php
         include '../app/includes/user/application/list.inc.php';
         foreach ($applications as $app){
-            echo '<div class="card mt-5">
+            if($app['status'] <= 0){
+                echo '<div class="card mt-5">
                     <div class="card-body">
                         <div class="col-md-12 col-lg-12">
                             <div class="row bordered">
@@ -76,13 +77,34 @@ session_start();
                                 </div>
                                 <div class="col-md-3 text-align-right">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-danger">cancel</button>
+                                        <form action="../app/includes/user/application/process.inc.php" method="POST">
+                                            <input type="hidden" name="status" value="4">
+                                            <input type="hidden" name="app_id" value="'.$app['id'].'">
+                                           <button type="submit" class="btn btn-sm btn-outline-danger">cancel</button>                             
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>';
+            }else{
+                echo '<div class="card mt-5">
+                    <div class="card-body">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="row bordered">
+                                <div class="col-md-9 col-lg-9">
+                                    <a href="javascript:void(0)"><h4>'.$app['car']['brand'].'</h4></a>
+                                    <p>'.$app['car']['job_des'].'</p><br><br>
+                                    '.status($app['status']).'<br>
+                                    <small class="text-muted">'.$app['updated_at'].'</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+            }
+
         }
     ?>
 

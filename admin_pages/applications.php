@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Us! | Driver's Hub</title>
+    <title>Applications | Driver's Hub</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/x-icon">
@@ -64,9 +64,11 @@ session_start();
 <!--/.Navbar-->
 <div class="container">
     <?php
+    include "../app/includes/component/message.php";
     include '../app/includes/admin/application/list.inc.php';
     foreach ($applications as $app){
-        echo '<div class="card mt-5">
+        if($app['status'] <= 0){
+            echo '<div class="card mt-5">
                     <div class="card-body">
                         <div class="col-md-12 col-lg-12">
                             <div class="row bordered">
@@ -82,14 +84,43 @@ session_start();
                                 </div>
                                 <div class="col-md-3 text-align-right">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-success">Accept</button>
-                                        <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <form action="../app/includes/admin/application/process.inc.php" method="POST">
+                                            <input type="hidden" name="status" value="1">
+                                            <input type="hidden" name="app_id" value="'.$app['id'].'">
+                                           <button type="submit" class="btn btn-sm btn-outline-success">Accept</button>                             
+                                        </form>
+                                        <form action="../app/includes/admin/application/process.inc.php" method="POST">
+                                            <input type="hidden" name="status" value="3">
+                                            <input type="hidden" name="app_id" value="'.$app['id'].'">
+                                           <button type="submit" class="btn btn-sm btn-outline-danger">Deny</button>                  
+                                        </form>                                 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>';
+        }else{
+            echo '<div class="card mt-5">
+                    <div class="card-body">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="row bordered">
+                                <div class="col-md-9 col-lg-9">
+                                    <a href="javascript:void(0)"><h4>'.$app['car']['brand'].'</h4></a>
+                                    <p>'.$app['car']['job_des'].'</p>
+                                </div>
+                                <div class="col-md-9 col-lg-9">
+                                    <span class="font-size-large">Driver: </h4><a href="javascript:void(0)"><h4>'.$app['user']['name'].'</h4></a></span>
+                                    <a href="mailto:'.$app['user']['email'].'">'.$app['user']['email'].'</a><br><br>
+                                    '.status($app['status']).'<br><br>
+                                    <small class="text-muted">'.$app['updated_at'].'</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+        }
+
     }
     ?>
 </div>
