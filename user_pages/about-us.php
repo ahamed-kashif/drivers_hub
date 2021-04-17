@@ -61,6 +61,11 @@ session_start();
 <div class="container">
     <div class="card mt-3 mb-3 p-5">
         <div class="card-body">
+            <div class="row">
+                <?php
+                include "../app/includes/component/message.php"
+                ?>
+            </div>
             <p class="text-warning text-right display-4">About Us!</p>
             <div class="row">
                 <div class="col-md-5 col-sm-5 col-lg-5">

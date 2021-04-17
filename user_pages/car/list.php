@@ -61,6 +61,11 @@ include "../../app/includes/user/car/list.inc.php";
         <div class="container">
             <div class="row">
                 <?php
+                include "../../app/includes/component/message.php"
+                ?>
+            </div>
+            <div class="row">
+                <?php
                 foreach ($cars as $car){
                     echo '<div class="col-md-4">
                 <div class="card mb-4 box-shadow">

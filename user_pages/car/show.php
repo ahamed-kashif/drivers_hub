@@ -55,6 +55,11 @@
 
     </nav>
     <!--/.Navbar-->
+    <div class="row">
+        <?php
+        include "../../app/includes/component/message.php"
+        ?>
+    </div>
     <div class="container">
         <?php
             include "../../app/includes/user/car/show.inc.php";
@@ -74,7 +79,8 @@
                             <p class="card-text">'.$car['job_des'].'</p>
                             <p class="card-text"><small class="text-muted">Last updated '.date_format(date_create($car['updated_at']),'d M, Y').'</small></p>'
                             ?>
-                            <form>
+                            <form action="../../app/includes/user/application/store.inc.php" method="post">
+                                <input type="hidden" value="<?php echo $car['id'] ?>" name="car_id">
                                 <button class="btn btn-lg btn-outline-warning">APPLY NOW!</button>
                             </form>
                         </div>
