@@ -6,7 +6,10 @@ if (isset($_SESSION['name']) || isset($_SESSION['id'])){
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="/user_pages/profile.php">Profile</a>
                 <a class="dropdown-item" href="/user_pages/applications.php">Applications</a>
-                <a class="dropdown-item" href="#">Logout</a>
+                <form action="../../app/includes/user/auth/logout.inc.php" method="post">
+                <input type="hidden" name="logout" value="1">
+                    <button type="submit" class="dropdown-item">Logout</button>
+                </form>
             </div>
         </li>';
 }else{
