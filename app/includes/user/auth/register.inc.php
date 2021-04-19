@@ -5,7 +5,7 @@ session_start();
 $message="";
 if(count($_POST)>0) {
     $result = mysqli_query($conn,"SELECT * FROM users WHERE username='" . $_POST["username"] . "' and email = '". $_POST["email"]."' LIMIT 1");
-    if($result){
+    if(!$result){
         printf("Error: %s\n", mysqli_error($conn));
     }else{
         $sql = "INSERT INTO users (username, email, password, name) VALUES ('".$_POST['username']."', '".$_POST['email']."', '".$_POST['password']."', '".$_POST['username']."')";
