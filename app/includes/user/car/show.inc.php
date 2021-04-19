@@ -1,5 +1,4 @@
 <?php
-session_start();
 if(empty($_GET['id'])){
     header("Location: ./list.php?error=Wrong%20Url!!");
 }
@@ -24,5 +23,5 @@ try{
         }
     }
 }catch (\Exception $e){
-    header("Location: ../../../../../admin_pages/dashboard.php?error=".$e->getMessage());
+    header("Location: ../../../../../user_pages/profile.php?error=".$e->getMessage());
 }

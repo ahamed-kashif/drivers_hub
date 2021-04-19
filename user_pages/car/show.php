@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +49,7 @@
 
             <form class="form-inline">
                 <div class="md-form my-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="search">
                     <button type="submit" class="btn btn-md btn-outline-light">search</button>
                 </div>
             </form>
@@ -54,6 +57,7 @@
         <!-- Collapsible content -->
 
     </nav>
+    <div class="result"></div>
     <!--/.Navbar-->
     <div class="row">
         <?php
@@ -91,9 +95,37 @@
     </div>
 
 
-    <script src="/assets/js/plugins/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="/assets/js/app.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // fetch data from table without reload/refresh page
+            loadData();
+            function loadData(query){
+                $.ajax({
+                    url : "../ajax_search.php",
+                    type: "get",
+                    chache :false,
+                    data:{query:query},
+                    success:function(response){
+                        $(".result").html(response);
+                    }
+                });
+            }
+
+            // live search data from table without reload/refresh page
+            $("#search").keyup(function(){
+                var search = $(this).val();
+                console.log(search)
+                if (search !="") {
+                    loadData(search);
+                }else{
+                    loadData();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
