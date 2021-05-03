@@ -1,5 +1,50 @@
 <?php
-if (isset($_SESSION['name']) || isset($_SESSION['id'])){
+// $fb = new Facebook\Facebook([
+//     'app_id' => '1373208343040789',
+//     'app_secret' => '72c287bbeecbb55c3e6a37f11dac68b3',
+//     'default_graph_version' => 'v2.10',
+//       ]);
+    
+//     $helper = $fb->getRedirectLoginHelper();
+    
+//     try {
+//       $accessToken = $helper->getAccessToken();
+//     } catch(Facebook\Exception\ResponseException $e) {
+//       // When Graph returns an error
+//       echo 'Graph returned an error: ' . $e->getMessage();
+//       exit;
+//     } catch(Facebook\Exception\SDKException $e) {
+//       // When validation fails or other local issues
+//       echo 'Facebook SDK returned an error: ' . $e->getMessage();
+//       exit;
+//     }
+    
+//     if (! isset($accessToken)) {
+//       if ($helper->getError()) {
+//         header('HTTP/1.0 401 Unauthorized');
+//         echo "Error: " . $helper->getError() . "\n";
+//         echo "Error Code: " . $helper->getErrorCode() . "\n";
+//         echo "Error Reason: " . $helper->getErrorReason() . "\n";
+//         echo "Error Description: " . $helper->getErrorDescription() . "\n";
+//       } else {
+//         header('HTTP/1.0 400 Bad Request');
+//         echo 'Bad request';
+//       }
+//       exit;
+//     }
+//     try {
+//         // Returns a `Facebook\Response` object
+//         $response = $fb->get('/me?fields=id,name', $accessToken);
+//       } catch(Facebook\Exception\ResponseException $e) {
+//         echo 'Graph returned an error: ' . $e->getMessage();
+//         exit;
+//       } catch(Facebook\Exception\SDKException $e) {
+//         echo 'Facebook SDK returned an error: ' . $e->getMessage();
+//         exit;
+//       }
+      
+//       $user = $response->getGraphUser();
+if (isset($_SESSION['name']) || isset($_SESSION['id']) || isset($_SESSION['fb_access_token'])){
     echo '<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">User</a>

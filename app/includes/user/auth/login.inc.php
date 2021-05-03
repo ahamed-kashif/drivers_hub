@@ -12,6 +12,11 @@ if(count($_POST)>0) {
         if(is_array($row)) {
             $_SESSION["id"] = $row['id'];
             $_SESSION["name"] = $row['name'];
+            if($_POST['rememberme']){
+                $cookie_name = "rememberme";
+                $cookie_value = "rememberme";
+                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+            }
             $message="you are logged in";
         } else {
             $message = "Invalid Username or Password!";

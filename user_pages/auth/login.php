@@ -1,6 +1,7 @@
 <?php
     session_start();
-    if(isset($_SESSION['name'])){
+    require_once __DIR__ . '../../../vendor/autoload.php';
+    if(isset($_SESSION['name']) || isset($_SESSION['fb_access_token'])){
         header('Location: ../profile.php?error=your%20already%20logged%20in!');
     }
 ?>
@@ -21,7 +22,25 @@
             <div class="card-header">
                 <h3>Sign In</h3>
                 <div class="d-flex justify-content-end social_icon">
-                    <span><i class="fab fa-facebook-square"></i></span>
+                    <!-- <fb:login-button 
+                        scope="public_profile,email"
+                        onlogin="checkLoginState();">
+                    </fb:login-button> -->
+                    <?php
+                        $fb = new Facebook\Facebook([
+                            'app_id' => '1373208343040789',
+                            'app_secret' => '72c287bbeecbb55c3e6a37f11dac68b3',
+                            'default_graph_version' => 'v2.10',
+                        ]);
+
+                        $helper = $fb->getRedirectLoginHelper();
+
+                        $permissions = ['email']; // Optional permissions
+                        $loginUrl = $helper->getLoginUrl('http://localhost:8080/user_pages/auth/fb-callback.php', $permissions);
+
+                        echo '<a href="' . $loginUrl . '"><span><i class="fab fa-facebook-square"></i></span></a>'; ''
+                    ?>
+                    <!-- <span><i class="fab fa-facebook-square"></i></span> -->
                     <span><i class="fab fa-google-plus-square"></i></span>
                     <span><i class="fab fa-twitter-square"></i></span>
                 </div>
