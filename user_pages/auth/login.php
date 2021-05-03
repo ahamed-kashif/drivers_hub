@@ -36,7 +36,7 @@
                         $helper = $fb->getRedirectLoginHelper();
 
                         $permissions = ['email']; // Optional permissions
-                        $loginUrl = $helper->getLoginUrl('http://localhost:8080/user_pages/auth/fb-callback.php', $permissions);
+                        $loginUrl = $helper->getLoginUrl('https://drivers-hub.tidyfish.co/user_pages/auth/fb-callback.php', $permissions);
 
                         echo '<a href="' . $loginUrl . '"><span><i class="fab fa-facebook-square"></i></span></a>'; ''
                     ?>
