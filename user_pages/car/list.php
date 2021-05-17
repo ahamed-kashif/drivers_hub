@@ -1,6 +1,3 @@
-<?php
-include "../../app/includes/user/car/list.inc.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +54,9 @@ include "../../app/includes/user/car/list.inc.php";
         <!-- Collapsible content -->
 
     </nav>
+    <?php
+    include "../../app/includes/user/car/list.inc.php";
+    ?>
     <!--/.Navbar-->
     <div class="album py-5">
         <div class="container">

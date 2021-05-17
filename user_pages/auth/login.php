@@ -76,7 +76,7 @@
             </div>
             <div class="card-footer">
                 <div class="d-flex justify-content-center links">
-                    Don't have an account?<a href="/user_pages/auth/register.html">Register Now!</a>
+                    Don't have an account?<a href="/user_pages/auth/register.php">Register Now!</a>
                 </div>
                 <div class="d-flex justify-content-center">
                     <a href="/user_pages/auth/forgot-pass.html">Forgot your password?</a>

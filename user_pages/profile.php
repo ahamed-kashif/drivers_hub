@@ -1,7 +1,9 @@
 <?php
 session_start();
 if(!isset($_SESSION['name'])){
-    header("Location:../user_pages/auth/login.php?error=Login%20First");
+    if(!isset($_COOKIE['rememberme'])){
+        header("Location:../user_pages/auth/login.php?error=Login%20First");
+    }
 }
 ?>
 <!DOCTYPE html>

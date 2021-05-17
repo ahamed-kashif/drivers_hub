@@ -13,8 +13,11 @@ if(count($_POST)>0) {
             $_SESSION["id"] = $row['id'];
             $_SESSION["name"] = $row['name'];
             if($_POST['rememberme']){
+                if (isset($_COOKIE['rememberme'])) {
+                    setcookie('rememberme','', time() - 3600);
+                }
                 $cookie_name = "rememberme";
-                $cookie_value = "rememberme";
+                $cookie_value = $row['id'];
                 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
             }
             $message="you are logged in";

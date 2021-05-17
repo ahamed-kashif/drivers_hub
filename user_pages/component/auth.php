@@ -44,7 +44,34 @@
 //       }
       
 //       $user = $response->getGraphUser();
-if (isset($_SESSION['name']) || isset($_SESSION['id']) || isset($_SESSION['fb_access_token'])){
+define('DB_SERVER', '127.0.0.1');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'drivers_hub');
+define('DB_PORT', '8000');
+
+//connection
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+if(!isset($_SESSION['name'])){
+    if(!isset($_COOKIE['rememberme'])){
+        header("Location:../user_pages/auth/login.php?error=Login%20First");
+    }else{
+        $result = mysqli_query($conn,"SELECT * FROM users WHERE id=" . $_COOKIE["rememberme"] . "  LIMIT 1");
+        if(!$result){
+            printf("Error: %s\n", mysqli_error($conn));
+        }else {
+            $row = mysqli_fetch_array($result);
+            if (is_array($row)) {
+                $_SESSION["id"] = $row['id'];
+                $_SESSION["name"] = $row['name'];
+            }
+        }
+    }
+}
+if (isset($_SESSION['name']) && (isset($_SESSION['id']) || isset($_SESSION['fb_access_token']) || isset($_COOKIE['rememberme']))){
     echo '<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">User</a>
