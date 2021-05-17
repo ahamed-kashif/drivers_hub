@@ -5,6 +5,10 @@ if(count($_POST) > 0){
     try{
         unset($_SESSION["id"]);
         unset($_SESSION["name"]);
+        if (isset($_COOKIE['rememberme'])) {
+            unset($_COOKIE['rememberme']);
+            setcookie('rememberme','',time() - 3600,'/');
+        }
         header("Location: ../../../../../user_pages/auth/login.php?success=You%20are%20successfully%20Logged%20out!");
     }catch(\Exception $e){
         header("Location: ../../../../user_pages/dashboard.php?error=".$e->getMessage());

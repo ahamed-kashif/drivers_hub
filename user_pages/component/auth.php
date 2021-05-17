@@ -56,9 +56,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 if(!isset($_SESSION['name'])){
-    if(!isset($_COOKIE['rememberme'])){
-        header("Location:../user_pages/auth/login.php?error=Login%20First");
-    }else{
+    if(isset($_COOKIE['rememberme'])){
         $result = mysqli_query($conn,"SELECT * FROM users WHERE id=" . $_COOKIE["rememberme"] . "  LIMIT 1");
         if(!$result){
             printf("Error: %s\n", mysqli_error($conn));
