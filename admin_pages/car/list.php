@@ -77,7 +77,10 @@ include "../../app/includes/admin/car/list.inc.php";
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="edit.php?id='.$car['id'].'" class="btn btn-sm btn-outline-warning">Edit</a>
-                                <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                                <form action="../../app/includes/admin/car/delete.inc.php" method="post">
+                                    <input type="hidden" name="id" value="'.$car['id'].'">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger" onsubmit="return confirm("are you sure?")">Delete</button>
+                                </form>
                             </div>
                             <small class="text-muted">9 mins</small>
                         </div>

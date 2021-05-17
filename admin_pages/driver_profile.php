@@ -1,9 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['admin_name'])){
-    header("Location:../admin_pages/auth/login.php?error=Login%20First");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,30 +26,19 @@ if(!isset($_SESSION['admin_name'])){
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-2">
-                <a class="nav-link" href="dashboard.php">Admin Dashboard
+                <a class="nav-link active" href="dashboard.php">Admin Dashboard
                 </a>
+                <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link" href="javascript:void(0)">Cars</a>
+                <a class="nav-link" href="car/list.php">Cars</a>
             </li>
             <li class="nav-item mr-2">
                 <a class="nav-link" href="drivers.php">Drivers</a>
             </li>
-            <li class="nav-item mr-2">
-                <a class="nav-link" href="/admin_pages/car/add.php">Add Car</a>
-            </li>
-            <li class="nav-item mr-2">
-                <a class="nav-link active" href="drivers.php">Drivers</a>
-                <span class="sr-only">(current)</span>
-            </li>
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Admin</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Logout</a>
-                </div>
-            </li>
+            <?php
+            include "./component/auth.php"
+            ?>
 
         </ul>
         <!-- Links -->
@@ -70,32 +53,54 @@ if(!isset($_SESSION['admin_name'])){
     <!-- Collapsible content -->
 
 </nav>
-<!--/.Navbar-->
-<?php
- include "../app/includes/admin/drivers/list.inc.php";
-?>
-<div class="container">
-    <?php
-        foreach ($drivers as $driver){
-            echo '<div class="card mt-5">
-                    <div class="card-body">
-                        <div class="col-md-12 col-lg-12">
-                            <div class="row bordered">
-                                <div class="col-md-9 col-lg-9">
-                                    <a href="../admin_pages/driver_profile.php?id='.$driver['id'].'"><h4>'.$driver['name'].'</h4></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>';
-        }
-    ?>
+<div class="result">
 
 </div>
+<?php
+include "../app/includes/component/message.php";
+include "../app/includes/admin/drivers/show.inc.php"
+?>
+<!--/.Navbar-->
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card p-3">
+        <div class="d-flex align-items-center">
+            <div class="image"> <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" class="rounded" width="155"> </div>
+            <div class="ml-3 w-100">
+                <h4 class="mb-0 mt-0"><?php echo $driver['name'] ?></h4>
+                <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                    <div class="d-flex flex-column"> <span class="followers">Applications</span> <span class="number2">980</span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<script src="/assets/js/plugins/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="/assets/js/app.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        loadData();
+        function loadData(query){
+            $.ajax({
+                url : "ajax_search.php",
+                type: "get",
+                data:{query:query},
+                success:function(response){
+                    $(".result").html(response);
+                }
+            });
+        }
+        $("#search").keyup(function(){
+            var search = $(this).val();
+            if (search !="") {
+                loadData(search);
+            }else{
+                loadData();
+            }
+        });
+    });
+</script>
 </body>
 </html>
