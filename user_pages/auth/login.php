@@ -4,7 +4,7 @@
     if(isset($_SESSION['name']) || isset($_SESSION['fb_access_token'])){
         header('Location: ../profile.php?error=your%20already%20logged%20in!');
     }
-    if(!isset($_COOKIE['rememberme'])) {
+    if(isset($_COOKIE['rememberme'])) {
         header('Location: ../profile.php?error=your%20already%20logged%20in!');
     } 
 ?>

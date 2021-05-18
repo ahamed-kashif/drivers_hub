@@ -47,7 +47,7 @@
 define('DB_SERVER', '127.0.0.1');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'drivers_hub');
+define('DB_NAME', 'driverhub');
 define('DB_PORT', '8000');
 
 //connection
