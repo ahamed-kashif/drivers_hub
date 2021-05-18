@@ -83,7 +83,7 @@ $fb = new Facebook\Facebook([
   setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
   // User is logged in with a long-lived access token.
   // You can redirect them to a members-only page.
-  header('Location: http://localhost:8080');
+  header('Location: https://drivers-hub.tidyfish.co/');
 ?>
 </body>
 </html>
